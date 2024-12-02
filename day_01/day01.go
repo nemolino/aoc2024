@@ -12,7 +12,7 @@ import (
 )
 
 func Solve() {
-	var lines []string = utils.ReadInputFromFile("inputs/day_01/input.txt")
+	var lines []string = utils.ReadInputFromFile("inputs/day_01/part12.input")
 	if res1, res2, err := part1And2(lines); err != nil {
 		log.Fatal(err)
 		os.Exit(-1)

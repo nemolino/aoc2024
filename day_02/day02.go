@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 	"slices"
-	"strconv"
 	"strings"
 
 	"github.com/nemolino/aoc2024/utils"
@@ -33,11 +32,7 @@ func part1And2(lines []string) (int, int, error) {
 		x := strings.Fields(line)
 		report := make([]int, len(x))
 		for i := 0; i < len(report); i++ {
-			if level, err := strconv.Atoi(x[i]); err != nil {
-				return -1, -1, err
-			} else {
-				report[i] = level
-			}
+			report[i] = utils.StringToInt(&x[i])
 		}
 		if isSafe1(report) {
 			result1++
@@ -72,8 +67,8 @@ func isSafe1(report []int) bool {
 }
 
 func isSafe2(report []int) bool {
+	r := make([]int, len(report))
 	for i := 0; i < len(report); i++ {
-		r := make([]int, len(report))
 		copy(r, report)
 		if isSafe1(slices.Delete(r, i, i+1)) {
 			return true

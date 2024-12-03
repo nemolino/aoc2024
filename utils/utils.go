@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"strconv"
 )
 
 func ReadInputFromFile(filepath string) []string {
@@ -26,4 +27,19 @@ func ReadInputFromFile(filepath string) []string {
 	}
 
 	return lines
+}
+
+func Abs(x int) int {
+	if x < 0 {
+		x = -x
+	}
+	return x
+}
+
+func StringToInt(s *string) int {
+	x, err := strconv.Atoi(*s)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return x
 }

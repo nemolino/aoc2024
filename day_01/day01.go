@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 	"sort"
-	"strconv"
 	"strings"
 
 	"github.com/nemolino/aoc2024/utils"
@@ -32,16 +31,8 @@ func part1And2(lines []string) (int, int, error) {
 
 	for i, line := range lines {
 		pair := strings.Fields(line)
-		if x, err := strconv.Atoi(pair[0]); err != nil {
-			return -1, -1, err
-		} else {
-			l1[i] = x
-		}
-		if x, err := strconv.Atoi(pair[1]); err != nil {
-			return -1, -1, err
-		} else {
-			l2[i] = x
-		}
+		l1[i] = utils.StringToInt(&pair[0])
+		l2[i] = utils.StringToInt(&pair[1])
 	}
 	sort.Ints(l1)
 	sort.Ints(l2)

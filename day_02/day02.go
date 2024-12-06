@@ -29,11 +29,7 @@ func part1And2(lines []string) (int, int, error) {
 	result1 := 0
 	result2 := 0
 	for _, line := range lines {
-		x := strings.Fields(line)
-		report := make([]int, len(x))
-		for i := 0; i < len(report); i++ {
-			report[i] = utils.StringToInt(&x[i])
-		}
+		report := utils.MapStringToInt(strings.Fields(line))
 		if isSafe1(report) {
 			result1++
 			result2++

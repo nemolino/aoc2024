@@ -43,3 +43,11 @@ func StringToInt(s *string) int {
 	}
 	return x
 }
+
+func MapStringToInt(s []string) []int {
+	x := make([]int, len(s))
+	for i := 0; i < len(s); i++ {
+		x[i] = StringToInt(&s[i])
+	}
+	return x
+}

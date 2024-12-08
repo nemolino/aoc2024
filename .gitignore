@@ -26,7 +26,5 @@ go.work.sum
 
 **/.DS_Store
 
-/inputs/day_06/
 /day_06/
-/inputs/day_07/part12.input
-/inputs/day_08/part12.input
+/inputs/actual/

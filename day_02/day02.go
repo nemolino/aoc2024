@@ -1,30 +1,13 @@
 package day01
 
 import (
-	"fmt"
-	"log"
-	"os"
 	"slices"
 	"strings"
 
 	"github.com/nemolino/aoc2024/utils"
 )
 
-func Solve() {
-	var lines []string = utils.ReadInputFromFile("inputs/day_02/part12.input")
-	if res1, res2, err := part1And2(lines); err != nil {
-		log.Fatal(err)
-		os.Exit(-1)
-	} else {
-		fmt.Println("Day 02 " + strings.Repeat("-", 73))
-		fmt.Println()
-		fmt.Println("part1 : ", res1)
-		fmt.Println("part2 : ", res2)
-		fmt.Println()
-	}
-}
-
-func part1And2(lines []string) (int, int, error) {
+func Part1And2(lines []string) (int, int, error) {
 
 	result1 := 0
 	result2 := 0

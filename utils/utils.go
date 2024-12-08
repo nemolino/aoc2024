@@ -2,10 +2,26 @@ package utils
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"os"
 	"strconv"
+	"strings"
 )
+
+func Solve(day int, inputFilename string, f func([]string) (int, int, error)) {
+	var lines []string = ReadInputFromFile(inputFilename)
+	if res1, res2, err := f(lines); err != nil {
+		log.Fatal(err)
+		os.Exit(-1)
+	} else {
+		fmt.Printf("Day %02d %s\n", day, strings.Repeat("-", 73))
+		fmt.Println()
+		fmt.Println("part1 : ", res1)
+		fmt.Println("part2 : ", res2)
+		fmt.Println()
+	}
+}
 
 func ReadInputFromFile(filepath string) []string {
 

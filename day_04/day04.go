@@ -1,16 +1,11 @@
 package day01
 
 import (
-	"fmt"
 	"log"
 	"os"
-	"strings"
-
-	"github.com/nemolino/aoc2024/utils"
 )
 
-func Solve() {
-	var lines []string = utils.ReadInputFromFile("inputs/day_04/part12.input")
+func Part1And2(lines []string) (int, int, error) {
 	res1, err := part1(lines)
 	if err != nil {
 		log.Fatal(err)
@@ -21,11 +16,7 @@ func Solve() {
 		log.Fatal(err)
 		os.Exit(-1)
 	}
-	fmt.Println("Day 04 " + strings.Repeat("-", 73))
-	fmt.Println()
-	fmt.Println("part1 : ", res1)
-	fmt.Println("part2 : ", res2)
-	fmt.Println()
+	return res1, res2, nil
 }
 
 func part1(lines []string) (int, error) {

@@ -1,35 +1,15 @@
 package day01
 
 import (
-	"fmt"
-	"log"
-	"os"
-	"strings"
-
-	"github.com/nemolino/aoc2024/utils"
 	"k8s.io/apimachinery/pkg/util/sets"
 )
-
-func Solve() {
-	var lines []string = utils.ReadInputFromFile("inputs/day_08/part12.test_input")
-	if res1, res2, err := part1And2(lines); err != nil {
-		log.Fatal(err)
-		os.Exit(-1)
-	} else {
-		fmt.Println("Day 08 " + strings.Repeat("-", 73))
-		fmt.Println()
-		fmt.Println("part1 : ", res1)
-		fmt.Println("part2 : ", res2)
-		fmt.Println()
-	}
-}
 
 type pos struct {
 	x int
 	y int
 }
 
-func part1And2(lines []string) (int, int, error) {
+func Part1And2(lines []string) (int, int, error) {
 
 	M := make(map[string][]pos)
 

@@ -44,7 +44,8 @@ func part1And2(lines []string) (int, int, error) {
 }
 
 func checkPart1(target int, values []int) bool {
-	for op := 0; op < (1 << (len(values) - 1)); op++ {
+	n := int(math.Pow(2.0, float64(len(values)-1)))
+	for op := 0; op < n; op++ {
 		if evalPart1(values[1:], op, values[0]) == target {
 			return true
 		}

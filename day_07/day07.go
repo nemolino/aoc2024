@@ -1,4 +1,4 @@
-package day01
+package day07
 
 import (
 	"math"

@@ -1,4 +1,4 @@
-package day01
+package day06
 
 import (
 	"k8s.io/apimachinery/pkg/util/sets"

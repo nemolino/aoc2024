@@ -6,7 +6,6 @@ import (
 	"log"
 	"os"
 	"strconv"
-	"strings"
 )
 
 func Solve(day int, inputFilename string, f func([]string) (int, int, error)) {
@@ -15,11 +14,7 @@ func Solve(day int, inputFilename string, f func([]string) (int, int, error)) {
 		log.Fatal(err)
 		os.Exit(-1)
 	} else {
-		fmt.Printf("Day %02d %s\n", day, strings.Repeat("-", 73))
-		fmt.Println()
-		fmt.Println("part1 : ", res1)
-		fmt.Println("part2 : ", res2)
-		fmt.Println()
+		fmt.Printf("------- DAY %02d -------  part1 : %15d  ,  part2 : %15d\n", day, res1, res2)
 	}
 }
 

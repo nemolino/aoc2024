@@ -35,11 +35,6 @@ func Part1And2(lines []string) (int, int, error) {
 	return result1, result2, nil
 }
 
-func canGoRight(n *node, SIZE int) bool { return n.j+1 < SIZE }
-func canGoLeft(n *node) bool            { return n.j-1 >= 0 }
-func canGoUp(n *node) bool              { return n.i-1 >= 0 }
-func canGoDown(n *node, SIZE int) bool  { return n.i+1 < SIZE }
-
 func exploreFromSource(source node, M [][]int, SIZE int) (int, int) {
 
 	reachableDestinations := make([]*node, 0)
@@ -54,16 +49,16 @@ func exploreFromSource(source node, M [][]int, SIZE int) (int, int) {
 			reachableDestinations = append(reachableDestinations, x)
 			continue
 		}
-		if canGoRight(x, SIZE) && M[x.i][x.j+1] == x.value+1 {
+		if x.j+1 < SIZE && M[x.i][x.j+1] == x.value+1 {
 			q = append(q, &node{x.value + 1, x.i, x.j + 1})
 		}
-		if canGoLeft(x) && M[x.i][x.j-1] == x.value+1 {
+		if x.j-1 >= 0 && M[x.i][x.j-1] == x.value+1 {
 			q = append(q, &node{x.value + 1, x.i, x.j - 1})
 		}
-		if canGoUp(x) && M[x.i-1][x.j] == x.value+1 {
+		if x.i-1 >= 0 && M[x.i-1][x.j] == x.value+1 {
 			q = append(q, &node{x.value + 1, x.i - 1, x.j})
 		}
-		if canGoDown(x, SIZE) && M[x.i+1][x.j] == x.value+1 {
+		if x.i+1 < SIZE && M[x.i+1][x.j] == x.value+1 {
 			q = append(q, &node{x.value + 1, x.i + 1, x.j})
 		}
 	}

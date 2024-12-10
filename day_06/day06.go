@@ -65,7 +65,7 @@ func Part1(curPos pos, SIZE int, DIRECTIONS *[4]direction, OBSTACLE_POSITIONS se
 	for PosIsValid(curPos, SIZE) {
 		visitedPos.Insert(curPos)
 		nextPos := GetNextPos(curPos, (*DIRECTIONS)[curDirectionIndex])
-		if OBSTACLE_POSITIONS.Has(nextPos) {
+		for OBSTACLE_POSITIONS.Has(nextPos) {
 			curDirectionIndex = (curDirectionIndex + 1) % 4
 			nextPos = GetNextPos(curPos, (*DIRECTIONS)[curDirectionIndex])
 		}
@@ -94,15 +94,13 @@ func Part2(curPos pos, SIZE int, DIRECTIONS *[4]direction, OBSTACLE_POSITIONS se
 	curDirectionIndex := 0
 	visitedStates := sets.New[state]()
 	for PosIsValid(curPos, SIZE) {
-
 		curState := state{curPos, curDirectionIndex}
 		if visitedStates.Has(curState) {
 			return true
 		}
 		visitedStates.Insert(curState)
-
 		nextPos := GetNextPos(curPos, (*DIRECTIONS)[curDirectionIndex])
-		if OBSTACLE_POSITIONS.Has(nextPos) {
+		for OBSTACLE_POSITIONS.Has(nextPos) {
 			curDirectionIndex = (curDirectionIndex + 1) % 4
 			nextPos = GetNextPos(curPos, (*DIRECTIONS)[curDirectionIndex])
 		}

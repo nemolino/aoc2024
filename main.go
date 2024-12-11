@@ -11,6 +11,7 @@ import (
 	day08 "github.com/nemolino/aoc2024/day_08"
 	day09 "github.com/nemolino/aoc2024/day_09"
 	day10 "github.com/nemolino/aoc2024/day_10"
+	day11 "github.com/nemolino/aoc2024/day_11"
 
 	. "github.com/nemolino/aoc2024/utils"
 )
@@ -26,5 +27,6 @@ func main() {
 	Solve(8, "inputs/day08_part12.test_input", day08.Part1And2)
 	Solve(9, "inputs/day09_part12.test_input", day09.Part1And2)
 	Solve(10, "inputs/day10_part12.test_input", day10.Part1And2)
+	Solve(11, "inputs/day11_part12.test_input", day11.Part1And2)
 
 }

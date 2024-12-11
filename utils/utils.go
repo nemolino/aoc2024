@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 )
@@ -14,7 +15,7 @@ func Solve(day int, inputFilename string, f func([]string) (int, int, error)) {
 		log.Fatal(err)
 		os.Exit(-1)
 	} else {
-		fmt.Printf("------- DAY %02d -------  part1 : %15d  ,  part2 : %15d\n", day, res1, res2)
+		fmt.Printf("------- DAY %02d -------  part1 : %18d  ,  part2 : %18d\n", day, res1, res2)
 	}
 }
 
@@ -45,6 +46,10 @@ func Abs(x int) int {
 		x = -x
 	}
 	return x
+}
+
+func CountDigits(x int) int {
+	return int(math.Floor(math.Log10(float64(x)) + 1.0))
 }
 
 func StringToInt(s *string) int {

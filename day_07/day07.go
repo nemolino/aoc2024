@@ -66,8 +66,7 @@ func evalPart2(values []int, op int, acc int) int {
 	} else if op%3 == 1 {
 		return evalPart2(values[1:], op/3, acc*values[0])
 	} else {
-		digitsCount := math.Floor(math.Log10(float64(values[0])) + 1.0)
-		shift := int(math.Pow(10.0, digitsCount))
+		shift := int(math.Pow(10.0, float64(utils.CountDigits(values[0]))))
 		return evalPart2(values[1:], op/3, (acc*shift)+values[0])
 	}
 }

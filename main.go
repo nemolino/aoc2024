@@ -14,6 +14,7 @@ import (
 	day11 "github.com/nemolino/aoc2024/day_11"
 	day13 "github.com/nemolino/aoc2024/day_13"
 	day14 "github.com/nemolino/aoc2024/day_14"
+	day15 "github.com/nemolino/aoc2024/day_15"
 
 	. "github.com/nemolino/aoc2024/utils"
 )
@@ -40,4 +41,5 @@ func main() {
 	*/
 	Solve(13, "inputs/day13_part12.test_input", day13.Part1And2)
 	Solve(14, "inputs/day14_part12.input", day14.Part1And2)
+	Solve(15, "inputs/day15_part12.test_input", day15.Part1And2)
 }
